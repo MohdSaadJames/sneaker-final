@@ -5,8 +5,8 @@ price = {
     p4: 1486,
     p5: 832,
     p6: 2499,
-    p7: 3199,
-    p8: 3499
+    p7: 3499,
+    p8: 3199
 }
 
 quantity = {
@@ -61,11 +61,11 @@ var p8QuantityHolder = document.getElementById("p8QuantityHolder");
 
 
 function setP1() {
-    p1PriceHolder.innerText = price.p1;
+    p1PriceHolder.innerText = '₹' + price.p1;
     p1QuantityHolder.innerText = quantity.p1;
-    p1TotalPriceHolder.innerText = price.p1 * quantity.p1
+    p1TotalPriceHolder.innerText = '₹' + price.p1 * quantity.p1
     if (quantity.p1 == 0)
-        document.getElementById("p1").classList.add.notDisplayed;
+        document.getElementById("p1").style.display="none";
     else {
 
         document.getElementById("p1").style.display = "block";
@@ -73,71 +73,71 @@ function setP1() {
 }
 
 function setP2() {
-    p2PriceHolder.innerText = price.p2;
+    p2PriceHolder.innerText = '₹'+ price.p2;
     p2QuantityHolder.innerText = quantity.p2;
-    p2TotalPriceHolder.innerText = price.p2 * quantity.p2;
+    p2TotalPriceHolder.innerText = '₹' + price.p2 * quantity.p2;
     if (quantity.p2 == 0)
-        document.getElementById("p2").classList.add.notDisplayed;
+        document.getElementById("p2").style.display="none";
     else
         document.getElementById("p2").style.display = "block";
 }
 
 function setP3() {
-    p3PriceHolder.innerText = price.p3;
+    p3PriceHolder.innerText = '₹'+ price.p3;
     p3QuantityHolder.innerText = quantity.p3;
-    p3TotalPriceHolder.innerText = price.p3 * quantity.p3
+    p3TotalPriceHolder.innerText = '₹' + price.p3 * quantity.p3
     if (quantity.p3 == 0)
-        document.getElementById("p3").classList.add.notDisplayed;
+        document.getElementById("p3").style.display="none";
     else
         document.getElementById("p3").style.display = "block";
 }
 
 function setP4() {
-    p4PriceHolder.innerText = price.p4;
+    p4PriceHolder.innerText = '₹' + price.p4;
     p4QuantityHolder.innerText = quantity.p4;
-    p4TotalPriceHolder.innerText = price.p4 * quantity.p4
+    p4TotalPriceHolder.innerText = '₹' + price.p4 * quantity.p4
     if (quantity.p4 == 0)
-        document.getElementById("p4").classList.add.notDisplayed;
+        document.getElementById("p4").style.display="none";
     else
         document.getElementById("p4").style.display = "block";
 }
 
 function setP5() {
-    p5PriceHolder.innerText = price.p5;
+    p5PriceHolder.innerText = '₹' + price.p5;
     p5QuantityHolder.innerText = quantity.p5;
-    p5TotalPriceHolder.innerText = price.p5 * quantity.p5
+    p5TotalPriceHolder.innerText = '₹' + price.p5 * quantity.p5
     if (quantity.p5 == 0)
-        document.getElementById("p5").classList.add.notDisplayed;
+        document.getElementById("p5").style.display="none";
     else
         document.getElementById("p5").style.display = "block";
 }
 
 function setP6() {
-    p6PriceHolder.innerText = price.p6;
+    p6PriceHolder.innerText = '₹' + price.p6;
     p6QuantityHolder.innerText = quantity.p6;
-    p6TotalPriceHolder.innerText = price.p6 * quantity.p6;
+    p6TotalPriceHolder.innerText = '₹' + price.p6 * quantity.p6;
     if (quantity.p6 == 0)
-        document.getElementById("p6").classList.add.notDisplayed;
+        document.getElementById("p6").style.display="none";
     else
         document.getElementById("p6").style.display = "block";
 }
 
 function setP7() {
-    p7PriceHolder.innerText = price.p7;
+    p7PriceHolder.innerText = '₹' + price.p7;
     p7QuantityHolder.innerText = quantity.p7;
-    p7TotalPriceHolder.innerText = price.p7 * quantity.p7;
+    p7TotalPriceHolder.innerText = '₹' + price.p7 * quantity.p7;
     if (quantity.p7 == 0)
-        document.getElementById("p7").classList.add.notDisplayed;
+        document.getElementById("p7").style.display="none";
     else
         document.getElementById("p7").style.display = "block";
 }
 
 function setP8() {
-    p8PriceHolder.innerText = price.p8;
+    p8PriceHolder.innerText = '₹' + price.p8;
     p8QuantityHolder.innerText = quantity.p8;
-    p8TotalPriceHolder.innerText = price.p8 * quantity.p8;
+    p8TotalPriceHolder.innerText = '₹' + price.p8 * quantity.p8;
     if (quantity.p8 == 0)
-        document.getElementById("p8").classList.add.notDisplayed;
+        document.getElementById("p8").style.display="none";
     else
         document.getElementById("p8").style.display = "block";
 }
@@ -248,13 +248,22 @@ totalQuantityHolder.innerText = totalQuantity;
 function setTotalPrice(){
     totalPrice = price.p1*quantity.p1 + price.p2*quantity.p2 + price.p3*quantity.p3 + price.p4*quantity.p4 + price.p5*quantity.p5 + price.p6*quantity.p6 + price.p7*quantity.p7 + price.p8*quantity.p8 ;
     totalPriceHolder = document.getElementById('totalPriceHolder');
-    totalPriceHolder.innerText = totalPrice;
+    totalPriceHolder.innerText = '₹'+ totalPrice;
 
-    tax = (totalPrice*5)/100;
-    taxHolder = document.getElementById("taxHolder");
-    taxHolder.innerText = tax;
+    discount = parseInt((totalPrice*10)/100);
+    discountHolder = document.getElementById("discountHolder");
+    discountHolder.innerText = '₹'+ discount;
 
-    finalPrice = totalPrice + tax;
+    finalPrice = totalPrice - discount;
     finalPriceHolder = document.getElementById("finalPriceHolder");
-    finalPriceHolder.innerText = finalPrice;
+    finalPriceHolder.innerText = '₹'+ finalPrice;
+}
+
+//Disable Button
+function disable(butId){
+    var button = document.getElementById(butId);
+    button.style.backgroundColor = "Grey";
+    button.style.borderColor = "Black";
+    button.style.pointerEvents = "none";
+    button.innerHTML = "<em>Added to Cart</em>";
 }
