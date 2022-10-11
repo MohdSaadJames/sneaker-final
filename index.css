@@ -322,7 +322,10 @@ hr{
 
 /* Cart */
 
-
+.btn-outline-dark{
+  border-color: #343a40;
+  color: #343a40;
+}
 
 #cartItemsContainer{
   /* background-color: rgb(35, 0, 44); */
