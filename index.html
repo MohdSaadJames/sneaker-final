@@ -39,7 +39,7 @@
             <a class="nav-link" href="#bestsellers"><i class="fa-solid fa-heart"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="myCart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a class="nav-link" href="#cart"><i class="fa-solid fa-cart-shopping"></i></a>
           </li>
         </ul>
       </div>
@@ -55,7 +55,7 @@
             <span class="mainHeadingSpan">comfy-N-cool</span> <br />Sneakers?
           </h1>
           <button type="button" class="btn btn-outline-warning btn-lg">
-            Shop Now
+            <a style="color: inherit; text-decoration: none;" href="#products">Shop Now <i class="fa-solid fa-cart-shopping"></i></a>
           </button>
         </div>
 
@@ -80,7 +80,7 @@
               that offers a wide range of footwears for you and your family.
             </p>
             <p class="price">Price - ₹1379</p>
-            <button class="btn-warning btn" onclick="increment('p1')">
+            <button class="btn-warning btn" onclick="increment('p1'), disable('b1')"  id="b1" >
               Add To Cart <i class="fa-solid fa-cart-shopping"></i>
             </button>
           </div>
@@ -99,7 +99,7 @@
             </p>
 
             <p class="price">Price - ₹999</p>
-            <button class="btn-warning btn"  onclick="increment('p2')">
+            <button class="btn-warning btn"  onclick="increment('p2'), disable('b2')"  id="b2" >
               Add To Cart <i class="fa-solid fa-cart-shopping"></i>
             </button>
           </div>
@@ -118,7 +118,7 @@
             </p>
 
             <p class="price">Price - ₹1299</p>
-            <button class="btn-warning btn"  onclick="increment('p3')">
+            <button class="btn-warning btn"  onclick="increment('p3'), disable('b3')"  id="b3" >
               Add To Cart <i class="fa-solid fa-cart-shopping"></i>
             </button>
           </div>
@@ -135,7 +135,7 @@
               that offers a wide range of footwears for you and your family.
             </p>
             <p class="price">Price - ₹1486</p>
-            <button class="btn-warning btn"  onclick="increment('p4')">
+            <button class="btn-warning btn"  onclick="increment('p4'), disable('b4')"  id="b4" >
               Add To Cart <i class="fa-solid fa-cart-shopping"></i>
             </button>
           </div>
@@ -155,7 +155,7 @@
             </p>
 
             <p class="price">Price - ₹832</p>
-            <button class="btn-warning btn"  onclick="increment('p5')">
+            <button class="btn-warning btn"  onclick="increment('p5'), disable('b5')"  id="b5" >
               Add To Cart <i class="fa-solid fa-cart-shopping"></i>
             </button>
           </div>
@@ -174,7 +174,7 @@
             </p>
 
             <p class="price">Price - ₹2499</p>
-            <button class="btn-warning btn" onclick="increment('p6')">
+            <button class="btn-warning btn" onclick="increment('p6'), disable('b6')"  id="b6">
               Add To Cart <i class="fa-solid fa-cart-shopping"></i>
             </button>
           </div>
@@ -235,9 +235,9 @@
           <center>
             <h2 id="nameHolder">Click on any image beside to get large preview and product details</h2>
             <p class="price" id="premiumPriceHolder" class="price"></p>
-            <button class="btn-warning btn premiumButton" id="defaultHiddenMen" onclick="increment('p7')" style="display:none">
+            <button class="btn-warning btn premiumButton" id="defaultHiddenMen" onclick="increment('p7') , disable('defaultHiddenMen')"  style="display:none">
               Add To Cart <i class="fa-solid fa-cart-shopping"></i>
-              <button class="btn-warning btn premiumButton" id="defaultHiddenWomen" onclick="increment('p8')" style="display:none">
+              <button class="btn-warning btn premiumButton" id="defaultHiddenWomen" onclick="increment('p8') , disable('defaultHiddenWomen')" style="display:none">
               Add To Cart <i class="fa-solid fa-cart-shopping"></i>
           </center>
         </div>
@@ -277,7 +277,7 @@
 <section id="cart">
   <h1 class="section-heading">My <span class="orange">Cart</span></h1>
 <div class="row">
-  <div class="col col-md-8 col-sm-12" id="cartItemsContainer">
+  <div class="col-md-8 col-sm-12" id="cartItemsContainer">
 
     <div id="p1" class="notDisplayed">
       <img src="https://m.media-amazon.com/images/I/81AQ8yDvLdS._SX695._SX._UX._SY._UY_.jpg" class="cart-img">
@@ -303,9 +303,10 @@
       <img src="https://m.media-amazon.com/images/I/81nohZIBxvL._UY695_.jpg" class="cart-img">
       <h2 class="cart-productName">Aesthetic Glow Men's Sneaker</h2>
       <h3 class="cart-productPrice">Price - <span class="priceHolder" id="p3PriceHolder"></span></h3>
-      <h3 class="cart-productPrice"> Quantity - <span id="p3QuantityHolder" class="quantityHolder"></span></h3>
+      <h3 class="cart-productPrice"> Quantity - <span id="p3QuantityHolder" class="quantityHolder"></span>
       <i class="fa-solid fa-plus" onclick="increment('p3')"></i>
       <i class="fa-solid fa-minus" onclick="decrement('p3')"></i>
+      </h3>
       <h3 class="cart-productPrice">Total Price - <span class="priceHolder" id="p3TotalPriceHolder"></span></h3>
     </div>
 
@@ -313,9 +314,10 @@
       <img src="https://m.media-amazon.com/images/I/81nHoypfANL._UX695_.jpg" class="cart-img">
       <h2 class="cart-productName">Symbol Classic Women's Sneaker </h2>
       <h3 class="cart-productPrice">Price - <span class="priceHolder" id="p4PriceHolder"></span></h3>
-      <h3 class="cart-productPrice"> Quantity - <span id="p4QuantityHolder" class="quantityHolder"></span></h3>
+      <h3 class="cart-productPrice"> Quantity - <span id="p4QuantityHolder" class="quantityHolder"></span>
       <i class="fa-solid fa-plus" onclick="increment('p4')"></i>
       <i class="fa-solid fa-minus" onclick="decrement('p4')"></i>
+    </h3>
       <h3 class="cart-productPrice">Total Price - <span class="priceHolder" id="p4TotalPriceHolder"></span></h3>
     </div>
 
@@ -323,9 +325,10 @@
       <img src="https://m.media-amazon.com/images/I/71+TZ2mYu3L._SY695._SX._UX._SY._UY_.jpg" class="cart-img">
       <h2 class="cart-productName">Bond Street Women's Sneaker</h2>
       <h3 class="cart-productPrice">Price - <span class="priceHolder" id="p5PriceHolder"></span></h3>
-      <h3 class="cart-productPrice"> Quantity - <span id="p5QuantityHolder" class="quantityHolder"></span></h3>
+      <h3 class="cart-productPrice"> Quantity - <span id="p5QuantityHolder" class="quantityHolder"></span>
       <i class="fa-solid fa-plus" onclick="increment('p5')"></i>
       <i class="fa-solid fa-minus" onclick="decrement('p5')"></i>
+    </h3>
       <h3 class="cart-productPrice">Total Price - <span class="priceHolder" id="p5TotalPriceHolder"></span></h3>
     </div>
 
@@ -333,40 +336,45 @@
       <img src="https://m.media-amazon.com/images/I/410NFrzDJdL.jpg" class="cart-img">
       <h2 class="cart-productName">Aesthetic Glow Women's Sneaker</h2>
       <h3 class="cart-productPrice">Price - <span class="priceHolder" id="p6PriceHolder"></span></h3>
-      <h3 class="cart-productPrice"> Quantity - <span id="p6QuantityHolder" class="quantityHolder"></span></h3>
+      <h3 class="cart-productPrice"> Quantity - <span id="p6QuantityHolder" class="quantityHolder"></span>
       <i class="fa-solid fa-plus" onclick="increment('p6')"></i>
       <i class="fa-solid fa-minus" onclick="decrement('p6')"></i>
+    </h3>
       <h3 class="cart-productPrice">Total Price - <span class="priceHolder" id="p6TotalPriceHolder"></span></h3>
     </div>
+
+    <!-- P7 has moved after P8 due to css perection -->
+
+    <div id="p8" class="notDisplayed">
+      <img src="images/img_w2.jpg" class="cart-img">
+      <h2 class="cart-productName">Women's Premium Bestseller</h2>
+      <h3 class="cart-productPrice">Price - <span class="priceHolder" id="p8PriceHolder"></span></h3>
+      <h3 class="cart-productPrice"> Quantity - <span id="p8QuantityHolder" class="quantityHolder"></span>
+      <i class="fa-solid fa-plus" onclick="increment('p8')"></i>
+      <i class="fa-solid fa-minus" onclick="decrement('p8')"></i>
+    </h3>
+      <h3 class="cart-productPrice">Total Price - <span class="priceHolder" id="p8TotalPriceHolder"></span></h3>
+    </div>
+
 
     <div id="p7" class="notDisplayed">
       <img src="images/img_m4.jpg" class="cart-img">
       <h2 class="cart-productName">Men's Premium Bestseller</h2>
       <h3 class="cart-productPrice">Price - <span class="priceHolder" id="p7PriceHolder"></span></h3>
-      <h3 class="cart-productPrice"> Quantity - <span id="p7QuantityHolder" class="quantityHolder"></span></h3>
+      <h3 class="cart-productPrice"> Quantity - <span id="p7QuantityHolder" class="quantityHolder"></span>
       <i class="fa-solid fa-plus" onclick="increment('p7')"></i>
       <i class="fa-solid fa-minus" onclick="decrement('p7')"></i>
+    </h3>
       <h3 class="cart-productPrice">Total Price - <span class="priceHolder" id="p7TotalPriceHolder"></span></h3>
     </div>
-
-    <div id="p8" class="notDisplayed">
-      <img src="images/img_w2.jpg" class="cart-img">
-      <h2 class="cart-productName">Aesthetic Glow Women's Sneaker</h2>
-      <h3 class="cart-productPrice">Price - <span class="priceHolder" id="p8PriceHolder"></span></h3>
-      <h3 class="cart-productPrice"> Quantity - <span id="p8QuantityHolder" class="quantityHolder"></span></h3>
-      <i class="fa-solid fa-plus" onclick="increment('p8')"></i>
-      <i class="fa-solid fa-minus" onclick="decrement('p8')"></i>
-      <h3 class="cart-productPrice">Total Price - <span class="priceHolder" id="p8TotalPriceHolder"></span></h3>
-    </div>
-
   </div>
 
-  <div class="col col-md-4 col-sm-12" id="totalCalc">
+  <div class="col-md-4 col-sm-12" id="totalCalc">
     <h3>Total Quantity: <span id="totalQuantityHolder">-</span></h3>
     <hr>
     <h3>Total Price: <span id="totalPriceHolder">-</span></h3>
     <hr>
-    <h3>Tax (5%): <span id="taxHolder">-</span></h3>
+    <h3>Discount (10%): <span id="discountHolder">-</span></h3>
     <hr>
     <h3>Final Price: <span id="finalPriceHolder">-</span></h3>
 
