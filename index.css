@@ -325,14 +325,16 @@ hr{
 
 
 #cartItemsContainer{
-  background-color: rgb(255, 157, 122);
+  /* background-color: rgb(35, 0, 44); */
   padding: 5%;
 }
 
 .cart-img{
   float: left;
-  width:30%;
+  height: 200px;
+  width:200px;
   border: 2px solid black;
+  
 }
 
 .cart-productName{
@@ -354,12 +356,15 @@ hr{
 
 .priceHolder, .quantityHolder{
   margin:4px;
-  color:rgb(0, 32, 32)
+  color:rgb(0, 32, 32);
 }
 
 .notDisplayed{
   display: none;
-  margin:15px;
+  margin: 10% 15px;
+  margin-top: 0;
+  background-color: whitesmoke;
+  
 }
 
 .fa-plus, .fa-minus{
@@ -382,6 +387,5 @@ hr{
   font-size: 1.5rem;
   color: white;
   font-family: Poppins;
-  text-decoration: none;
-  
+  text-decoration: none; 
 }
