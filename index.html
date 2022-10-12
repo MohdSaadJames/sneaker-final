@@ -17,7 +17,7 @@
   <title>Sneaker</title>
 </head>
 
-<body>
+<body onload="setTotalQuantity()">
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Navbar</a>
@@ -155,7 +155,7 @@
             </p>
 
             <p class="price">Price - ₹832</p>
-            <button class="btn-outline-dark btn"  onclick="increment('p5'), disable('b5')"  id="b5" >
+            <button class="btn-outline-dark btn"  onclick="increment('p5'), disable('b5')"  id="b5">
               Add To Cart <i class="fa-solid fa-cart-shopping"></i>
             </button>
           </div>
@@ -192,35 +192,35 @@
         <h2>Men's Bestseller</h2>
         <div class="imgRow">
           <div class="imgColumn">
-            <img src="images/img_m1.jpg" alt="Men's Premium Sneaker" style="width: 100%" onclick="myFunction(this);" />
+            <img src="images/img_m1.jpg" alt="Men's Premium Sneaker"  id="m1"  style="width: 100%" onclick="myFunction(this);" />
           </div>
           <div class="imgColumn">
-            <img src="images/img_m2.jpg" alt="Men's Premium Sneaker" style="width: 100%" onclick="myFunction(this);" />
+            <img src="images/img_m2.jpg" alt="Men's Premium Sneaker"  id="m2"  style="width: 100%" onclick="myFunction(this);" />
           </div>
           <div class="imgColumn">
-            <img src="images/img_m3.jpg" alt="Men's Premium Sneaker" style="width: 100%" onclick="myFunction(this);" />
+            <img src="images/img_m3.jpg" alt="Men's Premium Sneaker"  id="m3"  style="width: 100%" onclick="myFunction(this);" />
           </div>
           <div class="imgColumn">
-            <img src="images/img_m4.jpg" alt="Men's Premium Sneaker" style="width: 100%" onclick="myFunction(this);" />
+            <img src="images/img_m4.jpg" alt="Men's Premium Sneaker"  id="m4"  style="width: 100%" onclick="myFunction(this);" />
           </div>
         </div>
 
         <h2>Women's Bestseller</h2>
         <div class="imgRow">
           <div class="imgColumn">
-            <img src="images/img_w1.jpg" alt="Women's Premium Sneaker" style="width: 100%"
+            <img src="images/img_w1.jpg" alt="Women's Premium Sneaker" id="w1" style="width: 100%"
               onclick="myFunction(this);" />
           </div>
           <div class="imgColumn">
-            <img src="images/img_w2.jpg" alt="Women's Premium Sneaker" style="width: 100%"
+            <img src="images/img_w2.jpg" alt="Women's Premium Sneaker"  id="w2" style="width: 100%"
               onclick="myFunction(this);" />
           </div>
           <div class="imgColumn">
-            <img src="images/img_w3.jpg" alt="Women's Premium Sneaker" style="width: 100%"
+            <img src="images/img_w3.jpg" alt="Women's Premium Sneaker" id="w3"  style="width: 100%"
               onclick="myFunction(this);" />
           </div>
           <div class="imgColumn">
-            <img src="images/img_w4.jpg" alt="Women's Premium Sneaker" style="width: 100%"
+            <img src="images/img_w4.jpg" alt="Women's Premium Sneaker"  id="w4"  style="width: 100%"
               onclick="myFunction(this);" />
           </div>
         </div>
@@ -247,29 +247,7 @@
   </section>
 
   <script>
-    function myFunction(imgs) {
-      var expandImg = document.getElementById("expandedImg");
-      expandImg.src = imgs.src;
-      var nameHolder = document.getElementById("nameHolder");
-      nameHolder.innerHTML = imgs.alt;
 
-
-      var priceHolder = document.getElementById("premiumPriceHolder")
-      if (imgs.alt == "Men's Premium Sneaker"){
-        priceHolder.innerHTML = "Price - Rs. 3499";
-        var cartWomen = document.getElementById("defaultHiddenWomen")
-        var cartMen = document.getElementById("defaultHiddenMen")
-      cartWomen.style.display = "none";
-      cartMen.style.display = "block";
-      }
-      else{
-        priceHolder.innerHTML = "Price - Rs. 3199";
-        var cartMen = document.getElementById("defaultHiddenMen")
-        var cartWomen = document.getElementById("defaultHiddenWomen")
-      cartMen.style.display = "none";
-      cartWomen.style.display = "block";
-      }
-    }
   </script>
 
 <hr>
@@ -370,13 +348,13 @@
   </div>
 
   <div class="col-md-4 col-sm-12" id="totalCalc">
-    <h3>Total Quantity: <span id="totalQuantityHolder">-</span></h3>
-    <hr>
-    <h3>Total Price: <span id="totalPriceHolder">-</span></h3>
-    <hr>
-    <h3>Discount (10%): <span id="discountHolder">-</span></h3>
-    <hr>
-    <h3>Final Price: <span id="finalPriceHolder">-</span></h3>
+    <h3>Total Quantity: <span id="totalQuantityHolder">0</span></h3>
+  
+    <h3>Total Price: <span id="totalPriceHolder">0</span></h3>
+  
+    <h3>Discount (10%): <span id="discountHolder">0</span></h3>
+   
+    <h3>Final Price: <span id="finalPriceHolder">0</span></h3>
 
     <button class="checkOut"><a href="notAvailable.html" target="_blank">CheckOut</a> </button>
   </div>
