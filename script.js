@@ -1,3 +1,35 @@
+var array = [];
+var length = 0;
+
+    function myFunction(imgs) {
+        var expandImg = document.getElementById("expandedImg");
+        expandImg.src = imgs.src;
+        var nameHolder = document.getElementById("nameHolder");
+        nameHolder.innerHTML = imgs.alt;
+
+        if(length>0)
+        document.getElementById(array[length-1]).style.opacity="0.5";
+        length = array.push(imgs.id);
+
+        document.getElementById(array[length-1]).style.opacity="1";
+  
+        var priceHolder = document.getElementById("premiumPriceHolder")
+        if (imgs.alt == "Men's Premium Sneaker"){
+          priceHolder.innerHTML = "Price - Rs. 3499";
+          var cartWomen = document.getElementById("defaultHiddenWomen")
+          var cartMen = document.getElementById("defaultHiddenMen")
+        cartWomen.style.display = "none";
+        cartMen.style.display = "block";
+        }
+        else{
+          priceHolder.innerHTML = "Price - Rs. 3199";
+          var cartMen = document.getElementById("defaultHiddenMen")
+          var cartWomen = document.getElementById("defaultHiddenWomen")
+        cartMen.style.display = "none";
+        cartWomen.style.display = "block";
+        }
+      }
+
 price = {
     p1: 1379,
     p2: 999,
@@ -46,18 +78,6 @@ var p5QuantityHolder = document.getElementById("p5QuantityHolder");
 var p6QuantityHolder = document.getElementById("p6QuantityHolder");
 var p7QuantityHolder = document.getElementById("p7QuantityHolder");
 var p8QuantityHolder = document.getElementById("p8QuantityHolder");
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 function setP1() {
@@ -134,7 +154,7 @@ function setP6() {
     if (quantity.p6 == 0)
     {
         document.getElementById("p6").style.display="none";
-        showButton('b5');
+        showButton('b6');
     }
     else
         document.getElementById("p6").style.display = "block";
@@ -147,7 +167,7 @@ function setP7() {
     if (quantity.p7 == 0)
     {
         document.getElementById("p7").style.display="none";
-        showButton('b7');
+        showButton('defaultHiddenMen');
     }
     else
         document.getElementById("p7").style.display = "block";
@@ -160,7 +180,7 @@ function setP8() {
     if (quantity.p8 == 0)
     {
         document.getElementById("p8").style.display="none";
-        showButton('b8');
+        showButton('defaultHiddenWomen');
     }
     else
         document.getElementById("p8").style.display = "block";
@@ -263,10 +283,27 @@ function decrement(name) {
     setTotalPrice();
 }
 
+const para = document.createElement("h1");
+para.id = 'extra';
+para.innerText = "Cart is empty! Please add items to the cart to purchase.";
+para.classList.add("noItemHeading");
+
 function setTotalQuantity(){
+
 totalQuantity = quantity.p1 + quantity.p2 + quantity.p3 + quantity.p4 + quantity.p5 + quantity.p6 + quantity.p7 + quantity.p8;
 totalQuantityHolder = document.getElementById('totalQuantityHolder');
 totalQuantityHolder.innerText = totalQuantity;
+
+if(totalQuantity == 0){
+    document.getElementById('cartItemsContainer').appendChild(para);
+}
+
+else{
+    if(document.getElementById('cartItemsContainer').lastChild.id == 'extra'){
+    document.getElementById('cartItemsContainer').removeChild(para);
+    }
+}
+
 }
 
 function setTotalPrice(){
@@ -284,13 +321,7 @@ function setTotalPrice(){
 }
 
 //Disable Button
-function disable(butId){
-    var button = document.getElementById(butId);
-    button.style.backgroundColor = "Grey";
-    button.style.borderColor = "Black";
-    button.style.pointerEvents = "none";
-    button.innerHTML = "<em>Added to Cart</em>";
-}
+
 
 function disable(butId){
     var button = document.getElementById(butId);
